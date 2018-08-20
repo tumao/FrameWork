@@ -15,7 +15,6 @@ trait Handler
     {
         $routes = require SRC_PATH . "/routes.php";
 
-
         $dispatcher = \FastRoute\simpleDispatcher(function (\FastRoute\RouteCollector $r) use ($routes)
         {
             foreach ($routes as $route) 
@@ -46,7 +45,6 @@ trait Handler
         //        $request->getQueryString()
         //    ]
         //);
-
         $routeInfo = $dispatcher->dispatch($method, $uri);
         switch ($routeInfo[0]) 
         {

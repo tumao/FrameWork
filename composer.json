@@ -9,13 +9,8 @@
     },
     "autoload": {
         "classmap": [
-            "App/"
-        ],
-        "files":[
-        	"Src/Core/App.php"
-        ],
-        "psr-4":{
-        	"App\\Core":"Src/Core"
-        }
+            "App/",
+            "Src/Core"
+        ]
     }
 }
