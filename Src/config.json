@@ -1,0 +1,17 @@
+{
+  "app_name": "Poppy",
+  "log_file": "../log/poppy.log",
+  "connections": {
+    "default": {
+      "driver": "mysql",
+      "host": "localhost",
+      "username": "root",
+      "password": "123456",
+      "port": "3306",
+      "name": "gear",
+      "charset": "utf8",
+      "collation": "utf8_general_ci",
+      "prefix": ""
+    }
+  }
+}
