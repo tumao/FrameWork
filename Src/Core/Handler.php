@@ -1,10 +1,11 @@
 <?php
-namespace App\Core;
+namespace Com\Core;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Odan\Middleware\Dispatcher\HttpFoundationSprinter;
 
+//trait Handler
 trait Handler
 {
 	 /**

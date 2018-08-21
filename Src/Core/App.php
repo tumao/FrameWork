@@ -1,5 +1,5 @@
 <?php
-namespace App\Core;
+namespace Com\Core;
 
 use Illuminate\Database\Capsule\Manager;
 use Monolog\Handler\StreamHandler;
@@ -13,7 +13,12 @@ use Pimple\Container;
  */
 class App
 {
-    use Handler;
+    // use \Handler;
+
+    function __construct()
+    {
+    	echo '22222';
+    }
 
     /**
      * @var $container

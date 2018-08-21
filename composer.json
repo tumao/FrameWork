@@ -8,9 +8,8 @@
         "illuminate/database": "^5.2"
     },
     "autoload": {
-        "classmap": [
-            "App/",
-            "Src/Core"
-        ]
+        "psr-4": {
+        	"Com\\":"Src/Core/"
+        }
     }
 }

@@ -5,5 +5,7 @@
 	define ("APP_PATH", __DIR__."/App");			// 应用的目录地址
 	define ("SRC_PATH", __DIR__."/Src");
 
-	$app = new \App\Core\App();
+	require __DIR__."/Src/Core/App.php";
+	require __DIR__."/Src/Core/Handler.php";
+	$app = new Com\Core\App();
 	$app->run();
