@@ -1,9 +1,0 @@
-<?php 
-return 
-[
-	[
-        ['GET'],
-        '/',
-        'App\indexController@index'
-    ]
-];

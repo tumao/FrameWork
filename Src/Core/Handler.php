@@ -3,9 +3,8 @@ namespace Com\Core;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Odan\Middleware\Dispatcher\HttpFoundationSprinter;
+//use Odan\Middleware\Dispatcher\HttpFoundationSprinter;
 
-//trait Handler
 trait Handler
 {
 	 /**
@@ -14,7 +13,7 @@ trait Handler
      */
     public function initRoute()
     {
-        $routes = require SRC_PATH . "/routes.php";
+        $routes = require CONF_PATH . "/routes.php";
 
         $dispatcher = \FastRoute\simpleDispatcher(function (\FastRoute\RouteCollector $r) use ($routes)
         {
@@ -62,12 +61,12 @@ trait Handler
                 try 
                 {
 
-                    $sprinter = new HttpFoundationSprinter();
-                    $response = $sprinter->run($request, $response, []);
+//                    $sprinter = new HttpFoundationSprinter();
+//                    $response = $sprinter->run($request, $response, []);
 
                     $handler = $routeInfo[1];
                     $vars = $routeInfo[2];
-                    if (is_string($handler) && (strpos($handler, '@'))) 
+                    if (is_string($handler) && (strpos($handler, '@')))
                     {
                         $ret = $this->callHandler($handler, $vars, $request, $response);
                     }

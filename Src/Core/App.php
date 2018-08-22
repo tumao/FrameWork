@@ -13,13 +13,8 @@ use Pimple\Container;
  */
 class App
 {
-    // use \Handler;
 
-    function __construct()
-    {
-    	echo '22222';
-    }
-
+    use Handler;
     /**
      * @var $container
      */
@@ -38,21 +33,18 @@ class App
 
         $container = new Container();
 
-        //载入我们的config文件
-        $config = Config::load(APP_PATH . "config.json");
+        $config = Config::load(CONF_PATH . "/config.json");     // 加载配置文件
 
-        //注入到容器，下次可以直接使用
-        $container['config'] = $config;
+        $container['config'] = $config;                         //注入到容器，下次可以直接使用
 
-        //日志服务代码如下，我们使用config作为闭包的参数传进去
-        $container['logger'] = function () use ($config) {
+        $container['logger'] = function () use ($config)        //日志服务代码如下，我们使用config作为闭包的参数传进去
+        {
             $logger = new Logger($config->get('app_name'));
             $logger->pushHandler(new StreamHandler($config->get('log_file')));
             return $logger;
         };
 
-        //载入 DB
-        $capsule = new Manager();
+        $capsule = new Manager();                               //载入 DB
         foreach ($config->get('connections') as $name => $item) {
             $capsule->addConnection([
                 'driver'    => $item['driver'],
