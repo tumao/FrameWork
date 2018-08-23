@@ -6,6 +6,7 @@ class indexController
 	public function index()
 	{
 //		return array('code'=> 1);
+		return "this is test of index";
 	}
 
 	public function test()

@@ -6,12 +6,16 @@
         "pimple/pimple": "^3.2",
         "hassankhan/config": "^1.0",
         "illuminate/database": "^5.2",
-        "noodlehaus/config": "^0.8.2"
+        "noodlehaus/config": "^0.8.2",
+        "smarty/smarty": "^3.1"
     },
     "autoload": {
         "psr-4": {
         	"Com\\Core\\":"Src/Core/",
             "App\\":"App/"
         }
+    },
+    "config": {
+        "secure-http": false
     }
 }
